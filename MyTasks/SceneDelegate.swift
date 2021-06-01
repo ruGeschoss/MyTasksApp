@@ -16,7 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
              options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = scene as? UIWindowScene else { return }
     
-    let mainViewController = TasksViewController()
+    let mainTask = CompositeTask(description: "My tasks")
+    let mainViewController = TasksViewController(task: mainTask)
     let navigationController = UINavigationController(
       rootViewController: mainViewController)
     let window = UIWindow(windowScene: windowScene)
